@@ -4,3 +4,6 @@ console.log("Hello, NodeJS!");
 
 var message = "Nodejsの勉強を始めました";
 console.log(message);
+
+// 動かないプログラム
+// document.createElement("div");
