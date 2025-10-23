@@ -28,10 +28,11 @@ const student = {
 };
 
 // TODO: student を JSONに変換
-const json = {};
+const json = JSON.stringify(student)
 
 try {
     // TODO: 2) writeFile() で非同期ファイル書き込み
+    fs.writeFile(filePath, json, handleWrite)
     // コールバック関数: handleWrite
 } catch (error) {
     console.error("❌ ファイル書き出しエラー:", error.message);
