@@ -1,10 +1,13 @@
 /**
- * モジュール読み込み(CommonJS)
+import { path } from 'path';
+ * モジュール読み込み(ES5:CommonJS)
  */
 // 0) モジュール読み込み
 // TODO: fsモジュール読み込む: CommonJS形式
+const fs = require('fs');
 
 // TODO: pathモジュールを読み込む: CommonJS形式
+const path = require('path');
 
 /**
  * ファイル読み込み処理
