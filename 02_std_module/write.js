@@ -1,14 +1,18 @@
 /**
- * モジュール読み込み(ESM形式)
+ * ES6モジュール読み込み(ESM形式)
  */
 // TODO: fsモジュール読み込む: ESM形式
+import fs from 'fs';
 
 // TODO: pathモジュールを読み込む: ESM形式
+import path from 'path';
 
 /**
  * ファイル書き出し
  */
 // TODO: __dirname を定義: EMS環境では必須
+// path の resolve()
+const __dirname = path.resolve()
 
 // 現在のディレクトリパスから、data/student.json を指定
 const filePath = path.join(__dirname, "data", "student.json");
