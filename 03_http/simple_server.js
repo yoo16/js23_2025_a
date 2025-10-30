@@ -3,8 +3,11 @@ import http from 'http';
 
 // TODO: HTTPサーバ作成: http.createServer(コールバック)
 const server = http.createServer((req, res) => {
-// ---- ここから記述 ----
-    // TODO: ヘッダー
+    // ---- ここから記述 ----
+    // TODO: レスポンスヘッダー
+    res.writeHead(200, { 
+        'Content-Type': 'application/json; charset=utf-8' 
+    });
 
     // データ作成
     const data = {
