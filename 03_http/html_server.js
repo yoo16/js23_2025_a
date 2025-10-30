@@ -47,6 +47,12 @@ const server = http.createServer((req, res) => {
     if (pathname === "/") pathname = "/index.html";
 
     // 番外編: /api/list アクセス時: execLS()
+    if (pathname === "/api/list") {
+        // コマンド実行
+        execLS(res);
+        // 処理終了
+        return;
+    }
 
     // アクセスファイルの絶対パス
     // public/xxxxx.xxx
@@ -104,8 +110,8 @@ function execFile(ext, filePath, res) {
 // 番外編: ディレクトリ一覧表示関数
 function execLS(res) {
     // OSによってコマンド切り替え
-    // Unix/Mac: ls -1
-    // WIndows: dir /b
+    // Linux/Mac: ls -1
+    // Windows: dir /b
     const command = process.platform === "win32" ? "dir /b" : "ls -1";
 
     // public ディレクトリ内を一覧表示
