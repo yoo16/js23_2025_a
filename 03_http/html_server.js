@@ -13,7 +13,7 @@ const PORT = 3000;
 // 現在のディレクトリパス
 const __dirname = path.resolve();
 
-// 公開ディレクトリ
+// 公開ディレクトリ: フロントエンドファイル配置場所
 const publicDir = path.join(__dirname, "public");
 
 // MIMEタイプマップ
@@ -34,9 +34,12 @@ const mimeTypes = {
 const server = http.createServer((req, res) => {
     // TODO: URLパース: url.parse()
     // URLパラメータを排除
-    const parsed = {};
+    // http://localhost:3000/?param=aaa → /path/name
+    const parsed = url.parse(req.url);
     // TODO: パス名取得: pathname
-    let pathname = "";
+    // http://localhost:3000/ => /
+    // http://localhost:3000/about.html => /about.html
+    let pathname = parsed.pathname;
     // パス名ログ出力
     console.log(`pathname: ${pathname}`);
 
