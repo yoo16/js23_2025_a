@@ -1,7 +1,9 @@
 // TODO: httpモジュールをインポート: import
+import http from 'http';
 
-// TODO: HTTPサーバ作成: http.createServer()
-    // ---- ここから記述 ----
+// TODO: HTTPサーバ作成: http.createServer(コールバック)
+const server = http.createServer((req, res) => {
+// ---- ここから記述 ----
     // TODO: ヘッダー
 
     // データ作成
@@ -16,6 +18,8 @@
 
     // TODO: レスポンス終了
     // ---- ここまで記述 ----
+})
+
 
 // TODO: サーバホスト: localhost
 const HOST = "";
