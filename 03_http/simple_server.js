@@ -5,6 +5,7 @@ import http from 'http';
 const server = http.createServer((req, res) => {
     // ---- ここから記述 ----
     // TODO: レスポンスヘッダー
+    // 200 OK, JSON & UTF-8 で返しますよ！
     res.writeHead(200, { 
         'Content-Type': 'application/json; charset=utf-8' 
     });
@@ -18,8 +19,10 @@ const server = http.createServer((req, res) => {
     const json = JSON.stringify(data, null, 2);
 
     // TODO: JSONレスポンス
+    res.write(json);
 
     // TODO: レスポンス終了
+    res.end();
     // ---- ここまで記述 ----
 })
 
