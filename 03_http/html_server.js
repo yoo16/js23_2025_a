@@ -137,3 +137,6 @@ function execCommand(type, filePath, res) {
     });
     return;
 }
+
+// ターミナル： node html_server.js で起動
+// サーバ停止： Ctrl + C

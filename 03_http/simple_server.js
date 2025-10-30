@@ -37,5 +37,5 @@ server.listen(PORT, HOST, () => {
     console.log(`🚀 Server running at http://${HOST}:${PORT}`);
 })
 
-// ターミナル： node server.js で起動
+// ターミナル： node simple_server.js で起動
 // サーバ停止： Ctrl + C
