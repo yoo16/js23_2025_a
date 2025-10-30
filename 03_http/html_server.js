@@ -81,10 +81,10 @@ const server = http.createServer((req, res) => {
         const mime = mimeTypes[ext] || "application/octet-stream";
 
         // TODO: 番外編: 動的コンテンツ処理(.php, .pyの場合） 
-        // if (ext === ".php" || ext === ".py") {
-        //     execFile(ext, filePath, res);
-        //     return;
-        // }
+        if (ext === ".php" || ext === ".py") {
+            execFile(ext, filePath, res);
+            return;
+        }
 
         // TODO: 200 OK
         res.writeHead(200, { "Content-Type": mime });
