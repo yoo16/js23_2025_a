@@ -5,9 +5,11 @@ const dotenv = require('dotenv');
 dotenv.config()
 
 // TODO: 環境変数の取得
-const HOST = process.env.HOST  // HOST = "localhost"
+const HOST = process.env.HOST
 const PORT = process.env.PORT
 const SESSION_SECRET = process.env.SESSION_SECRET
+// ダメなパターン（ハードコーディング）
+// const HOST = "localhost"
 
 // 結果表示
 let result = { HOST, PORT, SESSION_SECRET };
