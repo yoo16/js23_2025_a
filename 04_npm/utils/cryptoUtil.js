@@ -1,5 +1,5 @@
 // TODO: cryptoモジュールをインポート
-// const crypto = require("crypto");
+const crypto = require("crypto");
 
 // 鍵生成用関数（共通）
 function generateKey(secret = "mySecretKey") {
@@ -35,4 +35,9 @@ function decrypt(encryptedData, key) {
     return decrypted;
 }
 
-// TODO: エクスポート: module.exports で各メソッドを公開
+// TODO: エクスポート: module.exports で各メソッドを公開(ES5形式)
+module.exports = {
+    encrypt,
+    decrypt,
+    generateKey,
+}
