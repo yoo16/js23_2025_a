@@ -41,7 +41,12 @@ app.get('/test', (req, res) => {
     res.send(message);
 });
 
-// TODO: GET /info
+// TODO: GET,POST,DELETE... /info
+app.all('/info', (req, res) => {
+    console.log("ルーティング: /info");
+    const message = 'なんでもOK!';
+    res.send(message);
+});
 
 // TODO: POST /save
 
