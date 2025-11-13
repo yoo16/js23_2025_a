@@ -67,12 +67,31 @@ app.get('/', (req, res) => {
 
 // TODO: GET /about
 // /public/about.html
+app.get('/about', (req, res) => {
+    console.log("ルーティング: /about");
+    // HTMLファイルのパスを指定
+    const path = __dirname + '/public/about.html'
+    res.sendFile(path);
+});
 
 // TODO: GET /search  => keyword クエリパラメータ対応
 // /public/home.html
+app.get('/search', (req, res) => {
+    console.log("ルーティング: /search");
+    // HTMLファイルのパスを指定
+    const path = __dirname + '/public/home.html'
+    res.sendFile(path);
+});
 
 // TODO GET /product/:id  => id パスパラメータ対応
 // /public/product.html
+app.get('/product/:id', (req, res) => {
+    console.log("ルーティング: /product/:id");
+    // HTMLファイルのパスを指定
+    const path = __dirname + '/public/product.html'
+    res.sendFile(path);
+});
+
 
 // TODO: Express 起動
 app.listen(PORT, HOST, () => {
