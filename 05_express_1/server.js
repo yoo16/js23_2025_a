@@ -58,6 +58,12 @@ app.post('/save', (req, res) => {
 
 // TODO: GET /
 // /public/home.html
+app.get('/', (req, res) => {
+    console.log("ルーティング: /");
+    // HTMLファイルのパスを指定
+    const path = __dirname + '/public/home.html'
+    res.sendFile(path);
+});
 
 // TODO: GET /about
 // /public/about.html
