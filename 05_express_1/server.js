@@ -144,6 +144,14 @@ app.get('/api/search', (req, res) => {
     res.json({ products })
 });
 
+// TODO: GET /api/product/csv_download
+app.get('/api/product/csv_download', (req, res) => {
+    console.log("ルーティング: /api/product/csv_download");
+    // CSVファイルのパス
+    const filePath = __dirname + '/data/products.csv';
+    // ファイルをダウンロード
+    res.download(filePath)
+});
 
 // TODO: Express 起動
 app.listen(PORT, HOST, () => {
