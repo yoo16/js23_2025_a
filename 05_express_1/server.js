@@ -22,6 +22,12 @@ console.log(status);
 const app = express()
 
 // ミドルウェア設定
+// どのリクエストでも実行されるミドルウェア
+app.use((req, res, next) => {
+    console.log(`ミドルウェア: ${req.method} ${req.url}`);
+    next();
+});
+
 // TODO: JSONボディパーサー
 // app.use(express.json());
 
