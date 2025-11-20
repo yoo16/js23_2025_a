@@ -4,6 +4,8 @@ import dotenv from 'dotenv';
 import path from 'path';
 // TODO: express インポート(ESM)
 import express from 'express';
+// models/Product.js から関数をインポート
+import { fetchProducts } from './models/Product.js';
 
 // 環境変数の取得（デフォルト値も設定）
 dotenv.config();
@@ -35,7 +37,7 @@ app.use((req, res, next) => {
 // app.use(express.urlencoded({ extended: true }));
 
 // TODO: 静的ファイルの公開: /public
-// app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/public'));
 
 // ------------------------
 // ルーティング
