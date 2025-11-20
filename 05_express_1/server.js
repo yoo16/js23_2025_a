@@ -78,6 +78,9 @@ app.get('/about', (req, res) => {
 // /public/home.html
 app.get('/search', (req, res) => {
     console.log("ルーティング: /search");
+    // クエリパラメータで keyword 取得
+    const keyword = req.query.keyword
+    console.log(keyword);
     // HTMLファイルのパスを指定
     const path = __dirname + '/public/home.html'
     res.sendFile(path);
