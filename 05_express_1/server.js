@@ -5,7 +5,11 @@ import path from 'path';
 // TODO: express インポート(ESM)
 import express from 'express';
 // models/Product.js から関数をインポート
-import { fetchProducts, findProductById } from './models/Product.js';
+import {
+    fetchProducts,
+    findProductById,
+    searchProducts,
+} from './models/Product.js';
 
 // 環境変数の取得（デフォルト値も設定）
 dotenv.config();
@@ -129,7 +133,16 @@ app.get('/api/product/show/:id', (req, res) => {
     res.json(product)
 });
 
-
+// TODO: GET /api/search?keyword=xxx
+app.get('/api/search', (req, res) => {
+    console.log("ルーティング: /api/search");
+    // クエリパラメータで keyword 取得
+    const keyword = req.query.keyword
+    // keyword を使って商品を検索
+    const products = searchProducts(keyword)
+    // JSONレスポンスを送信
+    res.json({ products })
+});
 
 
 // TODO: Express 起動
