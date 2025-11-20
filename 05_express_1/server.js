@@ -108,6 +108,15 @@ app.get('/product/:id', (req, res) => {
     res.sendFile(path);
 });
 
+// APIルーティング
+// TODO: GET /api/product/list
+app.get('/api/product/list', (req, res) => {
+    console.log("ルーティング: /api/product/list");
+    // 商品データを取得
+    const products = fetchProducts()
+    // JSONレスポンスを送信
+    res.json({ products })
+});
 
 // TODO: Express 起動
 app.listen(PORT, HOST, () => {
