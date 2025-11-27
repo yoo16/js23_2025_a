@@ -8,6 +8,7 @@ try {
     sql = "SELECT name, email FROM users LIMIT 5;"
 
     // TODO: users テーブルのレコードの件数を取得
+    sql =  "SELECT COUNT(id) AS user_count FROM users;"
 
     // TODO: users テーブルから email が user1@test.com のユーザーを取得
 
