@@ -5,6 +5,8 @@ try {
     // TODO: users テーブルから 5 件取得
     let sql = "SELECT * FROM users LIMIT 5;"
 
+    sql = "SELECT name, email FROM users LIMIT 5;"
+
     // TODO: users テーブルのレコードの件数を取得
 
     // TODO: users テーブルから email が user1@test.com のユーザーを取得
