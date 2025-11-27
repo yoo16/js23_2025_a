@@ -23,13 +23,13 @@ const config = {
 console.table(config);
 
 // TODO: プール作成: createPool() で DB接続プールを作成
-const pool = {}
+const pool = mysql.createPool(config)
 
-// テスト用SQL実行関数
+// テスト用SQL実行関数(Promise)
 export async function connect() {
     try {
         // TODO: DB設定なしで非同期接続: getConnection() 
-        const connection = null
+        const connection = await pool.getConnection()
         if (connection) {
             console.log('DB接続成功!');
         } else {
@@ -39,6 +39,7 @@ export async function connect() {
         console.error(e);
     } finally {
         // TODO: プール切断: end()
+        await pool.end()
     }
 }
 
