@@ -12,7 +12,7 @@ try {
     // TODO: users テーブルから name に mr を含むユーザーを取得
 
     // TODO: SQL 実行: 非同期処理
-    const [rows] = pool.query(sql)
+    const [rows] = await pool.query(sql)
 
     // 表示
     console.table(rows);
