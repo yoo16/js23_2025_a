@@ -13,7 +13,10 @@ try {
     const userId = userRows[0].id;
 
     // TODO: feeds テーブルに新しいレコードを追加
-    const feedSQL = ``;
+    const feedSQL = `INSERT INTO feeds
+                            (user_id, content)
+                            VALUES
+                            ('${userId}', '${content}');`;
     const [rows] = await pool.query(feedSQL);
 
     console.table(rows);
