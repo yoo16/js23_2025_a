@@ -1,4 +1,6 @@
-// TODO: mysql2 モジュールインポート
+// TODO: mysql2/promise モジュールインポート
+import mysql from 'mysql2/promise';
+
 import dotenv from 'dotenv';
 
 // DB接続情報を.envから取得
