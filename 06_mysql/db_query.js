@@ -11,6 +11,9 @@ try {
     sql =  "SELECT COUNT(id) AS user_count FROM users;"
 
     // TODO: users テーブルから email が user1@test.com のユーザーを取得
+    sql = `SELECT name, email 
+            FROM users 
+            WHERE email = 'user1@test.com';`
 
     // TODO: users テーブルから name に mr を含むユーザーを取得
 
