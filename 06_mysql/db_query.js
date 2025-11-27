@@ -16,6 +16,9 @@ try {
             WHERE email = 'user1@test.com';`
 
     // TODO: users テーブルから name に mr を含むユーザーを取得
+    sql = `SELECT name, email 
+            FROM users 
+            WHERE name LIKE '%mr%';`
 
     // TODO: SQL 実行: 非同期処理
     const [rows] = await pool.query(sql)
