@@ -4,8 +4,12 @@ import { pool } from './lib/db.js';
 const content = 'こんにちは';
 try {
     // TODO: users テーブルからランダムに1件取得
-    const userSQL = ``;
+    const userSQL = `SELECT id FROM users
+                        ORDER BY RAND()
+                        LIMIT 1;`;
+    // クエリ実行
     const [userRows] = await pool.query(userSQL);
+    // users.id を取得
     const userId = userRows[0].id;
 
     // TODO: feeds テーブルに新しいレコードを追加
