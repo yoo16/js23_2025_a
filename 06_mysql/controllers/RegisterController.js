@@ -9,7 +9,7 @@ export const index = async (req, res) => {
 export const register = async (req, res) => {
     const { name, email, password } = req.body;
     // 既存メールアドレスチェック
-    const { user, sql } = await userModel.findByEmail(email);
+    const user = await userModel.findByEmail(email);
     console.log("Exist User: ", user);
     if (user) {
         const data = {
