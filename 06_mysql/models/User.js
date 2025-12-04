@@ -67,7 +67,8 @@ export const insert = async (posts) => {
         const hashedPassword = await bcrypt.hash(password, 10);
         // TODO: SQL 文
         // users テーブルに name, email, password を挿入
-        const sql = '';
+        const sql = `INSERT INTO users (name, email, password)
+                        VALUES (?, ?, ?);`;
         // TODO: パラメータ配列
         const params = [];
         // SQL 実行
