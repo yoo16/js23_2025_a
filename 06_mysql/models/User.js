@@ -70,7 +70,7 @@ export const insert = async (posts) => {
         const sql = `INSERT INTO users (name, email, password)
                         VALUES (?, ?, ?);`;
         // TODO: パラメータ配列
-        const params = [];
+        const params = [name, email,hashedPassword];
         // SQL 実行
         const [rows] = await pool.query(sql, params);
         // 結果返却 JSON
