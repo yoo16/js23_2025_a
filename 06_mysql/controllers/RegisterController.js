@@ -13,7 +13,7 @@ export const register = async (req, res) => {
     console.log("Exist User: ", user);
     if (user) {
         const data = {
-            sql,
+            sql: '',
             message: '',
             errors: [{ msg: 'メールアドレスは既に登録されています' }],
         }
