@@ -123,13 +123,13 @@ export const update = async (id, posts) => {
 export const auth = async (email, password) => {
     try {
         // ユーザー存在チェック
-        const existUser = findByEmail(email);
+        const existUser = await findByEmail(email);
         // パスワード照合
-        if (existUser && bcrypt.compareSync(password, existsUser.password)) {
+        if (existUser && await bcrypt.compareSync(password, existUser.password)) {
             return {
                 user: existUser,
                 sql: "",
-                errors,
+                errors: [],
             };
         } else {
             return {
