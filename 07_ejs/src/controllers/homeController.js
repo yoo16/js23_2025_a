@@ -19,7 +19,7 @@ const index = (req, res) => {
     // 2. データを渡す
 
     // TODO: 仮のレスポンス: コメントアウトして削除
-    res.end('res.render() で views/home/index.ejs をレンダリングが必要');
+    res.end('Home Controller Index');
 };
 
 export default {
