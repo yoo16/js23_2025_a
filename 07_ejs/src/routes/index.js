@@ -15,7 +15,10 @@ router.get('/', homeController.index);
 
 // TODO: channelController のルーティング
 // GET: /channels: channelController.index
+router.get('/channels', channelController.index);
+
 // GET: /channels/:id: channelController.show
+router.get('/channels/:id', channelController.show);
 
 // productController
 router.get('/products', productController.index);
