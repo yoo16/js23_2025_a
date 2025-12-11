@@ -12,12 +12,16 @@ const index = (req, res) => {
     // 1. latestProducts
     // 2. latestChannels
     // 3. categories
-    const data = { }
+    const data = { 
+        latestProducts,
+        latestChannels,
+        categories,
+    }
 
     // TODO: ビュー表示
     // 1. views/home/index.ejs をレンダリング: res.render()
     // 2. データを渡す
-    return res.render('home/index')
+    return res.render('home/index', data)
 
     // TODO: 仮のレスポンス: コメントアウトして削除
     // res.end('Home Controller Index');
