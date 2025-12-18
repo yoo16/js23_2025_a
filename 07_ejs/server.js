@@ -49,6 +49,7 @@ app.use(express.static('public'));
 // ミドルウェア
 app.use((req, res, next) => {
     // TODO: サイトタイトルをビューに渡す
+    res.locals.siteTitle = siteTitle;
 
     // TODO: セッションをビュー全体に渡す: res.locals.session = req.session;
 
