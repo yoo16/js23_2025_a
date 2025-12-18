@@ -25,13 +25,15 @@
                         - ejselif スニペットを活用
                         - Coming Soon を表示
                 -->
+                <% if (channel.status === 'on_air') { %>
                 <div class="absolute top-4 left-4 px-3 py-1 bg-red-600 text-white text-xs font-bold uppercase tracking-wider rounded-full shadow-md animate-pulse">
                     On Air
                 </div>
-
+                <% } else { %>
                 <div class="absolute top-4 left-4 px-3 py-1 bg-sky-600 text-white text-xs font-bold uppercase tracking-wider rounded-full shadow-md">
                     Coming Soon
                 </div>
+                <% } %>
             </div>
         </div>
 
