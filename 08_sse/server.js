@@ -27,6 +27,11 @@ app.get("/stream", (req, res) => {
     // Content-Type: text/event-stream
     // Cache-Control: no-cache
     // Connection: keep-alive
+    res.writeHead(200, {
+        'Content-Type': 'text/event-stream',
+        'Cache-Control': 'no-cache',
+        'Connection': 'keep-alive',
+    })
 
     // クライアントを配列に追加
     clients.push(res);
