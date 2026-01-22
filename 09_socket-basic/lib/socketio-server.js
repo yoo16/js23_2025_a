@@ -19,6 +19,7 @@ export default (port, origin) => {
         // TODO: 本人に接続時にメッセージ送信
         // イベント名: connected
         // 送信: socket.emit()
+        socket.emit('connected', data)
 
         data = {
             message: `${socket.id} が接続しました`,

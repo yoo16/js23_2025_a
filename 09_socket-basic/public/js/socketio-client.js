@@ -50,8 +50,8 @@ socketio.on('connect', () => {
     clearLogs();
 });
 
-// TODO: 接続完了イベント（ーバから）: イベント名: connected
-socketio.on('', (data) => {
+// TODO: 接続完了イベント（サーバから）: イベント名: connected
+socketio.on('connected', (data) => {
     appendLog(data.message);
 });
 
