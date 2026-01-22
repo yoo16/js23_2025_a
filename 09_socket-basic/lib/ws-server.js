@@ -36,7 +36,7 @@ export default (port, origin) => {
         });
 
         // TODO: 切断: close イベント
-        ws.on('', () => {
+        ws.on('close', () => {
             // 全クライアントに送信
             wss.clients.forEach(client => {
                 if (client.readyState === 1) {
@@ -46,6 +46,7 @@ export default (port, origin) => {
                         date: dateString
                     });
                     // TODO: クライアントにデータ送信: send()
+                    client.send(data)
                 }
             });
         });

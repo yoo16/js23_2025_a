@@ -76,11 +76,13 @@ ws.onmessage = (e) => {
 
 // 送信
 function send() {
+    // テキストボックスの値を取得
     const text = messageInput.value;
     if (!text) return;
 
     if (ws.readyState === WebSocket.OPEN) {
         // TODO: サーバにメッセージ送信 send()
+        ws.send(text)
 
         // テキストボックスクリア
         messageInput.value = '';
