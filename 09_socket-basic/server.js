@@ -24,7 +24,7 @@ app.use(express.static('public'));
 app.listen(PORT, () => console.log(`Web: http://${HOST}:${PORT}`));
 
 // 3. wsサーバー起動 (Port 3001)
-// wsServer(WS_PORT, CORS_ORIGIN);
+wsServer(WS_PORT, CORS_ORIGIN);
 
 // 4. Socket.ioサーバー起動 (Port 3002)
 // ioServer(SOCKETIO_PORT, CORS_ORIGIN);
