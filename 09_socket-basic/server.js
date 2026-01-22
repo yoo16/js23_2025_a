@@ -27,4 +27,4 @@ app.listen(PORT, () => console.log(`Web: http://${HOST}:${PORT}`));
 wsServer(WS_PORT, CORS_ORIGIN);
 
 // 4. Socket.ioサーバー起動 (Port 3002)
-// ioServer(SOCKETIO_PORT, CORS_ORIGIN);
+ioServer(SOCKETIO_PORT, CORS_ORIGIN);
