@@ -40,6 +40,7 @@ export default (port, origin) => {
             // TODO: 全クライアントに送信: 
             // io.emit() または socket.broadcast.emit()
             // イベント名: message
+            io.emit('message', data)
         });
 
         // 切断
@@ -49,6 +50,7 @@ export default (port, origin) => {
                 date: new Date().toLocaleTimeString()
             }
             // TODO: 全クライアントに送信: イベント名: message
+            io.emit('message', data)
         });
     });
 };
