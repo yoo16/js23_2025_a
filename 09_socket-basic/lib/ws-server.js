@@ -12,11 +12,11 @@ export default (port, origin) => {
         ws.id = crypto.randomUUID();
         const dateString = new Date().toLocaleTimeString();
 
-        // 接続時にメッセージ送信（システムメッセージ）
-        // ws.send(JSON.stringify({
-        //     message: "wsサーバーに接続しました",
-        //     date: dateString
-        // }));
+        // TODO: 接続時にメッセージ送信（システムメッセージ）
+        ws.send(JSON.stringify({
+            message: "wsサーバーに接続しました",
+            date: dateString
+        }));
 
         // TODO: メッセージ受信: message イベント
         ws.on('', (buffer) => {
