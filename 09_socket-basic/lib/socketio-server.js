@@ -28,6 +28,7 @@ export default (port, origin) => {
         // TODO: ブロードキャストで接続メッセージを送信
         // イベント名: joined
         // 送信: socket.broadcast.emit()
+        socket.broadcast.emit('joined', data)
 
         // メッセージ受信
         socket.on('message', (msg) => {

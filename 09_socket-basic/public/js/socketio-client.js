@@ -56,7 +56,7 @@ socketio.on('connected', (data) => {
 });
 
 // TODO: 他のユーザ入室イベント: イベント名: joined
-socketio.on('', (data) => {
+socketio.on('joined', (data) => {
     appendLog(data.message);
 });
 
