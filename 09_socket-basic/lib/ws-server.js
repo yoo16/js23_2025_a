@@ -20,16 +20,17 @@ export default (port, origin) => {
         }));
 
         // TODO: メッセージ受信: message イベント
-        ws.on('', (buffer) => {
-            const data = JSON.stringify({
-                socketId: ws.id,
-                message: buffer.toString(),
-                date: dateString
-            });
+        ws.on('message', (buffer) => {
             // 全クライアントに送信
             wss.clients.forEach(client => {
                 if (client.readyState === 1) {
+                    const data = JSON.stringify({
+                        socketId: ws.id,
+                        message: buffer.toString(),
+                        date: dateString
+                    });
                     // TODO: クライアントにデータ送信: send()
+                    client.send(data)
                 }
             });
         });
