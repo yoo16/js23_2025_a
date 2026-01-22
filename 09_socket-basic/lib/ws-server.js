@@ -14,6 +14,7 @@ export default (port, origin) => {
 
         // TODO: 接続時にメッセージ送信（システムメッセージ）
         ws.send(JSON.stringify({
+            socketId: ws.id,
             message: "wsサーバーに接続しました",
             date: dateString
         }));
