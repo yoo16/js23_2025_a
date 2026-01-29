@@ -158,7 +158,7 @@ eraserBtn.addEventListener("click", () => {
 
 // Socket通信
 // TODO: 入室受信 イベント名: join-room
-socket.on("", (roomName) => {
+socket.on("join-room", (roomName) => {
     // 現在のルーム名保存
     currentRoom = roomName;
     // UI表示
