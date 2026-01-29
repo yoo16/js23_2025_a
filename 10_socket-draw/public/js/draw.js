@@ -88,6 +88,7 @@ function drawLine(x1, y1, x2, y2, c, s, emit = true) {
         // TODO: ドロー通知
         // イベント名: draw
         // データ: data
+        socket.emit('draw', data);
     }
 }
 
