@@ -181,7 +181,7 @@ socket.on("clear", () => {
 });
 
 // TODO: 履歴データの受信 イベント名: history
-socket.on("", (historyData) => {
+socket.on("history", (historyData) => {
     // Canvasをクリア
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
