@@ -169,7 +169,7 @@ socket.on("join-room", (roomName) => {
 });
 
 // TODO: 描画データの受信 イベント名: draw
-socket.on("", (d) => {
+socket.on("draw", (d) => {
     // ドロー処理
     drawLine(d.x1, d.y1, d.x2, d.y2, d.color, d.size, false)
 });
