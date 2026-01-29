@@ -175,7 +175,7 @@ socket.on("draw", (d) => {
 });
 
 // TODO: ドロークリア イベント名: clear
-socket.on("", () => {
+socket.on("clear", () => {
     // Canvasをクリア
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 });
@@ -195,6 +195,7 @@ socket.on("", (historyData) => {
 clearBtn.addEventListener("click", () => {
     if (!currentRoom) return;
     // サーバーにクリアを通知: イベント名: clear
+    socket.emit("clear")
 });
 
 // 初期状態のUIを反映
