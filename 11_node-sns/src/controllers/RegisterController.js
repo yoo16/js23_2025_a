@@ -5,10 +5,10 @@ export const index = (req, res) => {
     // TODO: セッション：前回の入力値を保持 
     // TODO: セッション：エラーメッセージを表示
     res.render("register", {
-        // input: req.session.input || {},
-        // errors: req.session.errors || [],
+        input: req.session.input || {},
+        errors: req.session.errors || [],
     });
-    // セッションをクリア
+    // セッションをクリア: フラッシュメッセージとして扱う
     req.session.errors = [];
 };
 
