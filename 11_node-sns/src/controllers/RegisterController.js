@@ -19,7 +19,7 @@ export const add = async (req, res) => {
 
     const newUser = { name, email, password, };
     // TODO: ユーザー登録: await userModel.save(newUser)
-    const isSuccess = false;
+    const isSuccess = await userModel.save(newUser)
 
     // 登録成功の場合、ログインページへ
     if (isSuccess) {
@@ -30,8 +30,8 @@ export const add = async (req, res) => {
     }
 
     // TODO: 登録失敗の場合、セッション：前回の入力値とエラーメッセージを保持
-    // req.session.input = { name, email, };
-    // req.session.errors = ["登録に失敗しました"];
+    req.session.input = { name, email, };
+    req.session.errors = ["登録に失敗しました"];
 
     // ユーザ登録画面へ
     return res.redirect('/register')
