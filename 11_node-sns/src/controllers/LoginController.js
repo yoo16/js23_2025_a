@@ -17,20 +17,21 @@ export const index = (req, res) => {
 // ログイン処理
 export const auth = async (req, res) => {
     const { email, password } = req.body;
-    // ログイン検証
+    // ログイン検証: authService に委譲
     const result = await authService.verifyLogin(email, password);
     const { user, accessToken, refreshToken } = result ?? {};
 
     // ログイン失敗
     if (!user) {
         // TODO: セッション登録
-        // req.session.input = { email };
-        // req.session.errors = ["メールアドレスとパスワードが間違っています。"];
+        req.session.input = { email };
+        req.session.errors = ["メールアドレスとパスワードが間違っています。"];
         return res.redirect("/login");
     }
 
     // ログイン成功
     // TODO: ユーザセッション登録: req.session.authUser
+    req.session.authUser = user;
 
     // JWT: アクセストークン: Cookie保存
     // authService.setAuthCookies(res, accessToken, refreshToken);
