@@ -16,7 +16,7 @@ export const restoreUser = async (req, res, next) => {
         // 3. セッション復元（アクセストークン有効時）
         if (accessToken) {
             // TODO: アクセストークン検証: jwt.verify()
-            const decoded = {};
+            const decoded = jwt.verify(accessToken, process.env.JWT_SECRET)
             if (decoded) {
                 // DBからユーザーを取得
                 const authUser = await userModel.findById(decoded.id);
@@ -33,7 +33,7 @@ export const restoreUser = async (req, res, next) => {
         // 4. セッション復元（アクセストークン無効時）
         if (refreshToken) {
             // TODO: リフレッシュトークントークン検証: jwt.verify()
-            const decoded = {};
+            const decoded = jwt.verify(resfreshToken, process.env.JWT_SECRET);
             if (decoded) {
                 const authUser = await userModel.findById(decoded.id);
                 if (authUser && authUser.refresh_token === refreshToken) {
