@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd /Users/yoo/projects/hal/2025/JS23_2025/js23_2025_a/12_vite_app/backend && npx tsc --noEmit 2>&1)",
+      "Bash(npx tsc --noEmit 2>&1)"
+    ]
+  }
+}
